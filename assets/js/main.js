@@ -14,10 +14,19 @@ async function loadPartials() {
 }
 
 function setActiveNavLink() {
-  const page = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+  function pageKeyFromPath(pathname) {
+    let path = pathname.toLowerCase().replace(/\/index\.html$/, '/');
+    path = path.replace(/^\//, '').replace(/\/$/, '').replace(/\.html$/, '');
+    return path || 'index';
+  }
+
+  const currentKey = pageKeyFromPath(window.location.pathname);
+
   document.querySelectorAll('.nav a').forEach(link => {
-    const href = (link.getAttribute('href') || '').toLowerCase();
-    const isActive = href === page || (page === '' && href === 'index.html');
+    const href = link.getAttribute('href') || '';
+    const url = new URL(href, document.baseURI);
+    const linkKey = pageKeyFromPath(url.pathname);
+    const isActive = linkKey === currentKey;
     link.classList.toggle('active', isActive);
     if (isActive) link.setAttribute('aria-current', 'page');
     else link.removeAttribute('aria-current');

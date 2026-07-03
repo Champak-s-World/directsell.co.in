@@ -18,3 +18,11 @@
 .menu-toggle{display:none;align-items:center;justify-content:center;width:46px;height:46px;border:1px solid var(--line);border-radius:14px;background:#fff;color:var(--brand);font-size:1.65rem;font-weight:900;cursor:pointer;box-shadow:0 8px 20px rgba(6,47,56,.08)}.menu-toggle:focus-visible,.nav a:focus-visible,.brand:focus-visible{outline:3px solid rgba(11,154,170,.35);outline-offset:3px}
 @media(max-width:900px){body.menu-open{overflow:hidden}.nav-wrap{min-height:72px}.brand img{width:48px;height:44px}.brand span{font-size:.98rem;max-width:62vw}.menu-toggle{display:inline-flex;flex:0 0 auto;z-index:102}.nav{position:fixed;left:0;right:0;top:72px;z-index:101;display:flex;flex-direction:column;align-items:stretch;gap:8px;margin:0;padding:14px min(24px,5vw) 22px;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 22px 44px rgba(6,47,56,.18);transform:translateY(-125%);opacity:0;pointer-events:none;transition:transform .25s ease,opacity .2s ease}.nav.open{transform:translateY(0);opacity:1;pointer-events:auto}.nav a{width:100%;justify-content:flex-start;padding:15px 16px;border-radius:16px;font-size:1.04rem}.nav .nav-cta{justify-content:center;margin-top:4px}.nav::after{content:"";position:fixed;left:0;right:0;top:100%;height:100vh;background:rgba(6,47,56,.35)}}
 @media(max-width:540px){.nav-wrap{width:min(100% - 28px,1160px)}.brand span{font-size:.9rem;max-width:58vw}.menu-toggle{width:44px;height:44px}.nav{top:68px}.floating{right:12px;bottom:12px}.floating a{width:46px;height:46px;font-size:.82rem}}
+
+
+/* WhatsApp floating contact */
+.floating{position:fixed;right:18px;bottom:18px;z-index:120;display:grid;gap:10px;justify-items:end}
+.floating a{min-width:52px;height:52px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;text-decoration:none;background:var(--brand);color:#fff;box-shadow:var(--shadow);font-weight:900;padding:0 14px}
+.floating .float-whatsapp{background:#25D366;color:#062f38;min-width:128px}
+.floating .float-whatsapp::before{content:"☎";margin-right:7px;font-size:1.05rem}
+@media(max-width:540px){.floating{right:12px;bottom:12px}.floating a{height:46px;min-width:46px;padding:0 11px;font-size:.78rem}.floating .float-whatsapp{min-width:112px}}
