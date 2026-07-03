@@ -60,13 +60,22 @@ function initMenu() {
     nav.classList.contains('open') ? closeMenu() : openMenu();
   });
 
-  nav.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+  nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+    document.querySelectorAll('.nav-dropdown[open]').forEach(dropdown => dropdown.removeAttribute('open'));
+    closeMenu();
+  }));
 
   document.addEventListener('keydown', event => {
-    if (event.key === 'Escape') closeMenu();
+    if (event.key === 'Escape') {
+      document.querySelectorAll('.nav-dropdown[open]').forEach(dropdown => dropdown.removeAttribute('open'));
+      closeMenu();
+    }
   });
 
   document.addEventListener('click', event => {
+    document.querySelectorAll('.nav-dropdown[open]').forEach(dropdown => {
+      if (!dropdown.contains(event.target)) dropdown.removeAttribute('open');
+    });
     if (!nav.classList.contains('open')) return;
     if (nav.contains(event.target) || menuButton.contains(event.target)) return;
     closeMenu();

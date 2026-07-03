@@ -43,3 +43,7 @@ For example, after upload, the contact page should open at:
 https://directsell.co.in/contact/
 
 Because header.html and footer.html are loaded as static partials using JavaScript, test through a local web server or after uploading. Do not test by double-clicking files directly from your computer.
+
+Update in this version:
+- Added a responsive "Plots" dropdown menu in header.html.
+- Added external plot search links for project numbers 1, 2 and 6.

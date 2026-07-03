@@ -26,3 +26,13 @@
 .floating .float-whatsapp{background:#25D366;color:#062f38;min-width:128px}
 .floating .float-whatsapp::before{content:"☎";margin-right:7px;font-size:1.05rem}
 @media(max-width:540px){.floating{right:12px;bottom:12px}.floating a{height:46px;min-width:46px;padding:0 11px;font-size:.78rem}.floating .float-whatsapp{min-width:112px}}
+
+/* Plots dropdown menu */
+.nav-dropdown{position:relative;display:inline-flex;align-items:center}
+.nav-dropdown summary{list-style:none;display:inline-flex;align-items:center;gap:6px;padding:10px 13px;border-radius:999px;text-decoration:none;font-weight:800;color:#16323a;line-height:1.1;cursor:pointer;user-select:none}
+.nav-dropdown summary::-webkit-details-marker{display:none}
+.nav-dropdown summary:hover,.nav-dropdown[open] summary{background:var(--soft);color:var(--brand)}
+.dropdown-menu{position:absolute;right:0;top:calc(100% + 10px);min-width:220px;background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);padding:8px;display:grid;gap:4px;z-index:120}
+.dropdown-menu a{justify-content:flex-start;width:100%;border-radius:12px;white-space:nowrap}
+.dropdown-menu a[target="_blank"]::after{content:"↗";font-size:.82rem;margin-left:auto;opacity:.65}
+@media(max-width:900px){.nav-dropdown{display:block;width:100%}.nav-dropdown summary{width:100%;justify-content:space-between;padding:15px 16px;border-radius:16px;font-size:1.04rem}.dropdown-menu{position:static;min-width:0;box-shadow:none;border:1px solid var(--line);border-radius:16px;margin:6px 0 0;padding:8px;background:#f8fdff}.dropdown-menu a{padding:13px 14px}.dropdown-menu a[target="_blank"]::after{margin-left:8px}}
