@@ -1,11 +1,31 @@
-Directsell static replacement website
+Directsell Buildcon Pvt. Ltd. website package
 
-Upload all files in this folder to your hosting public_html, GitHub Pages, Netlify, Cloudflare Pages, or any static host.
+Upload the contents of this folder to your website root.
 
-Before publishing:
-1. Update contact details in contact.html and assets/js/main.js.
-2. Verify names, roles, project details, rates and legal documents.
-3. Replace placeholder text with final approved sales copy.
-4. Keep only the latest verified PDFs in assets/docs.
+Main pages:
+- index.html
+- about.html
+- projects.html
+- gallery.html
+- documents.html
+- contact.html
 
-This package intentionally excludes WordPress core, plugins, wp-admin and error logs.
+Assets:
+- Images: assets/images/
+- PDFs: assets/docs/
+- CSS: assets/css/style.css
+- JavaScript: assets/js/main.js
+
+After uploading:
+1. Open the homepage and test the mobile menu.
+2. Test the gallery search.
+3. Test PDF downloads.
+4. Test the contact enquiry button.
+5. Submit sitemap.xml in your search console.
+
+Current enquiry email: info@directsell.co.in
+
+Reusable layout files:
+- header.html controls the logo and navigation menu.
+- footer.html controls floating buttons and footer content.
+Edit these two files once to update all pages.
