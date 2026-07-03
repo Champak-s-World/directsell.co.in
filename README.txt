@@ -11,6 +11,10 @@ Clean folder URL structure
 - /gallery/          -> gallery/index.html
 - /documents/        -> documents/index.html
 - /contact/          -> contact/index.html
+- /plots/            -> plots/index.html
+- /plots/project-1/  -> plots/project-1/index.html
+- /plots/project-2/  -> plots/project-2/index.html
+- /plots/project-6/  -> plots/project-6/index.html
 
 Shared layout files
 -------------------
@@ -46,4 +50,5 @@ Because header.html and footer.html are loaded as static partials using JavaScri
 
 Update in this version:
 - Added a responsive "Plots" dropdown menu in header.html.
-- Added external plot search links for project numbers 1, 2 and 6.
+- Added internal iframe pages for project numbers 1, 2 and 6.
+- The dropdown now opens local pages: /plots/project-1/, /plots/project-2/ and /plots/project-6/.
