@@ -38,13 +38,13 @@
 @media(max-width:900px){.nav-dropdown{display:block;width:100%}.nav-dropdown summary{width:100%;justify-content:space-between;padding:15px 16px;border-radius:16px;font-size:1.04rem}.dropdown-menu{position:static;min-width:0;box-shadow:none;border:1px solid var(--line);border-radius:16px;margin:6px 0 0;padding:8px;background:#f8fdff}.dropdown-menu a{padding:13px 14px}.dropdown-menu a[target="_blank"]::after{margin-left:8px}}
 
 
-/* Plot iframe pages */
-.plot-frame-section{padding:42px 0 82px;background:linear-gradient(180deg,#f8fdff,#fff)}
-.plot-toolbar{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:18px}
-.plot-toolbar p{margin:0;color:var(--muted)}
-.plot-frame-card{background:#fff;border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);overflow:hidden}
-.plot-frame{display:block;width:100%;height:78vh;min-height:640px;border:0;background:#fff}
-.plot-fallback{margin-top:16px;background:#fff7e8;border:1px solid #f2d9a8;color:#694800;border-radius:16px;padding:14px 16px}
-.plot-fallback a{font-weight:900;color:var(--brand)}
+/* Plot iframe pages: full-width embedded view */
+body.plot-embed-page{background:#fff;overflow:hidden}
+body.plot-embed-page .footer{display:none}
+.plot-embed-main{padding:0;margin:0;width:100vw;height:calc(100vh - 82px);background:#fff;overflow:hidden}
+.plot-embed-frame{display:block;width:100vw;height:100%;border:0;background:#fff}
+@media(max-width:900px){.plot-embed-main{height:calc(100vh - 72px)}}
+@media(max-width:540px){.plot-embed-main{height:calc(100vh - 68px)}}
+
 .plot-list{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-@media(max-width:900px){.plot-frame{height:72vh;min-height:540px}.plot-list{grid-template-columns:1fr}}
+@media(max-width:900px){.plot-list{grid-template-columns:1fr}}

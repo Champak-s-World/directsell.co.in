@@ -52,3 +52,6 @@ Update in this version:
 - Added a responsive "Plots" dropdown menu in header.html.
 - Added internal iframe pages for project numbers 1, 2 and 6.
 - The dropdown now opens local pages: /plots/project-1/, /plots/project-2/ and /plots/project-6/.
+
+
+Update: Plot pages now show the external plot search as full-width embedded iframe pages. The old 'Open in new tab' button and fallback text were removed.
