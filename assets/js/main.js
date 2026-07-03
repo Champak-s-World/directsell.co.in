@@ -26,21 +26,46 @@ function setActiveNavLink() {
 
 function initMenu() {
   const menuButton = document.querySelector('.menu-toggle');
-  const nav = document.querySelector('.nav');
-  if (menuButton && nav) {
-    menuButton.addEventListener('click', () => {
-      const isOpen = nav.classList.toggle('open');
-      menuButton.setAttribute('aria-expanded', String(isOpen));
-      menuButton.textContent = isOpen ? '×' : '☰';
-    });
-    nav.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        nav.classList.remove('open');
-        menuButton.setAttribute('aria-expanded', 'false');
-        menuButton.textContent = '☰';
-      });
-    });
+  const nav = document.querySelector('#primary-menu, .nav');
+  const icon = menuButton ? menuButton.querySelector('.menu-icon') : null;
+
+  if (!menuButton || !nav) return;
+
+  function closeMenu() {
+    nav.classList.remove('open');
+    document.body.classList.remove('menu-open');
+    menuButton.setAttribute('aria-expanded', 'false');
+    menuButton.setAttribute('aria-label', 'Open navigation menu');
+    if (icon) icon.textContent = '☰';
   }
+
+  function openMenu() {
+    nav.classList.add('open');
+    document.body.classList.add('menu-open');
+    menuButton.setAttribute('aria-expanded', 'true');
+    menuButton.setAttribute('aria-label', 'Close navigation menu');
+    if (icon) icon.textContent = '×';
+  }
+
+  menuButton.addEventListener('click', () => {
+    nav.classList.contains('open') ? closeMenu() : openMenu();
+  });
+
+  nav.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape') closeMenu();
+  });
+
+  document.addEventListener('click', event => {
+    if (!nav.classList.contains('open')) return;
+    if (nav.contains(event.target) || menuButton.contains(event.target)) return;
+    closeMenu();
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 900) closeMenu();
+  });
 }
 
 function initSlider() {
