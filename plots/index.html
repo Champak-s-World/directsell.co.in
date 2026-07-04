@@ -13,11 +13,29 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://directsell.co.in/plots/project-6/">
   <meta property="og:image" content="https://directsell.co.in/assets/images/hero.webp">
-  <link rel="icon" href="assets/images/favicon.png">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" href="/assets/images/favicon.png">
+  <link rel="stylesheet" href="/assets/css/style.css?v=20260704-plot-button">
+
+  <style>
+    /* Critical plot-page CSS kept inline so the button appears after publishing, even if the external CSS is cached. */
+    body.plot-embed-page { margin: 0; background: #eef8fa; overflow: hidden; }
+    body.plot-embed-page .footer { display: none; }
+    .plot-embed-main { width: 100vw; height: calc(100vh - 82px); margin: 0; padding: 0; display: flex; flex-direction: column; background: linear-gradient(180deg, #f8fdff 0%, #ffffff 42%); overflow: hidden; }
+    .plot-tool-panel { width: 100%; margin: 0; padding: 16px clamp(16px, 4vw, 46px); display: flex; justify-content: space-between; align-items: center; gap: 18px; background: linear-gradient(135deg, #073f49 0%, #066a76 55%, #0b9aaa 100%); color: #ffffff; border-bottom: 1px solid rgba(255, 255, 255, 0.18); box-shadow: 0 18px 45px rgba(6, 47, 56, 0.18); position: relative; z-index: 5; }
+    .plot-tool-copy { min-width: 0; }
+    .plot-tool-badge { display: inline-flex; align-items: center; gap: 8px; padding: 5px 10px; border-radius: 999px; background: rgba(255, 255, 255, 0.16); border: 1px solid rgba(255, 255, 255, 0.26); color: #e8fbff; font-size: 0.78rem; font-weight: 900; letter-spacing: 0.08em; text-transform: uppercase; }
+    .plot-tool-badge::before { content: ""; width: 8px; height: 8px; border-radius: 999px; background: #53f3a4; box-shadow: 0 0 0 5px rgba(83, 243, 164, 0.18); }
+    .plot-tool-panel h1 { margin: 8px 0 2px; font-size: clamp(1.25rem, 2.2vw, 2rem); line-height: 1.1; letter-spacing: -0.03em; color: #ffffff; }
+    .plot-tool-panel p { margin: 0; color: rgba(232, 251, 255, 0.86); font-size: 0.96rem; }
+    .plot-open-button { flex: 0 0 auto; display: inline-flex; align-items: center; justify-content: center; gap: 9px; min-height: 46px; padding: 12px 20px; border-radius: 999px; background: #ffffff; color: #05545e !important; font-weight: 900; text-decoration: none !important; border: 1px solid rgba(255, 255, 255, 0.65); box-shadow: 0 14px 32px rgba(0, 0, 0, 0.18); position: relative; z-index: 10; }
+    .plot-open-button:hover, .plot-open-button:focus { transform: translateY(-2px); background: #fff7e8; color: #073f49 !important; box-shadow: 0 18px 38px rgba(0, 0, 0, 0.24); }
+    .plot-embed-frame { display: block; width: 100vw; flex: 1 1 auto; min-height: 0; border: 0; background: #ffffff; position: relative; z-index: 1; }
+    @media (max-width: 900px) { .plot-embed-main { height: calc(100vh - 72px); } .plot-tool-panel { align-items: flex-start; flex-direction: column; padding: 14px 16px; gap: 12px; } .plot-open-button { width: 100%; } }
+    @media (max-width: 540px) { .plot-embed-main { height: calc(100vh - 68px); } .plot-tool-panel h1 { font-size: 1.18rem; } .plot-tool-panel p { font-size: 0.88rem; } }
+  </style>
 </head>
 <body class="plot-embed-page">
-  <div id="site-header" data-include="header.html"></div>
+  <div id="site-header" data-include="/header.html"></div>
 
   <main class="plot-embed-main" aria-label="Project 6 plot search">
     <section class="plot-tool-panel" aria-label="Plot search controls">
@@ -47,7 +65,7 @@
     ></iframe>
   </main>
 
-  <div id="site-footer" data-include="footer.html"></div>
-  <script src="assets/js/main.js"></script>
+  <div id="site-footer" data-include="/footer.html"></div>
+  <script src="/assets/js/main.js?v=20260704-plot-button"></script>
 </body>
 </html>

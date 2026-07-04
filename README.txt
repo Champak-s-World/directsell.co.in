@@ -55,3 +55,6 @@ Update in this version:
 
 
 Update: Plot pages now show the external plot search as full-width embedded iframe pages. The old 'Open in new tab' button and fallback text were removed.
+
+
+Plot button fix: Project plot pages include critical inline CSS and cache-busted CSS/JS links so the Open in New Tab button appears reliably after deployment.
